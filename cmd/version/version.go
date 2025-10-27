@@ -2,7 +2,7 @@ package version
 
 import (
 	"fmt"
-	"log"
+	"github.com/gangantongxue/ggl"
 	"os"
 	"path/filepath"
 
@@ -24,11 +24,11 @@ func Init() {
 	yamlPath := filepath.Join("version", "version.yaml")
 	data, err := os.ReadFile(yamlPath)
 	if err != nil {
-		log.Panic("read version file error", err)
+		ggl.Panic("read version file error :", ggl.Err(err))
 	}
 	err = yaml.Unmarshal(data, &version)
 	if err != nil {
-		log.Panic("unmarshal version file error", err)
+		ggl.Panic("unmarshal version file error :", ggl.Err(err))
 	}
 }
 

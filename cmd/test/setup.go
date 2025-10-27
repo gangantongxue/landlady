@@ -25,14 +25,14 @@ func Setup(t *testing.T) {
 	})
 
 	// 获取当前测试函数所在文件的路径
-	_, filename, _, ok := runtime.Caller(1) // 注意这里传1，获取调用者（测试函数）的栈信息
+	_, filename, _, ok := runtime.Caller(1)
 	if !ok {
 		t.Fatal("无法获取测试文件路径")
 	}
 
 	// 计算主函数目录（cmd/）
-	testDir := filepath.Dir(filename)         // 当前测试文件目录: cmd/version/
-	targetDir := filepath.Join(testDir, "..") // 向上导航到cmd/
+	testDir := filepath.Dir(filename)
+	targetDir := filepath.Join(testDir, "..")
 	absTargetDir, err := filepath.Abs(targetDir)
 	if err != nil {
 		t.Fatalf("获取绝对路径失败: %v", err)
