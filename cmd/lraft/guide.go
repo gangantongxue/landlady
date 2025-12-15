@@ -2,8 +2,9 @@ package lraft
 
 import (
 	"fmt"
-	"github.com/gangantongxue/ggl"
 	"sync"
+
+	"github.com/gangantongxue/ggl"
 
 	"github.com/gangantongxue/landlady/cmd/global"
 	"github.com/hashicorp/raft"

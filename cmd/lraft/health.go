@@ -1,9 +1,10 @@
 package lraft
 
 import (
-	"github.com/gangantongxue/ggl"
 	"net"
 	"time"
+
+	"github.com/gangantongxue/ggl"
 
 	"github.com/gangantongxue/landlady/cmd/global"
 )
