@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package landlady;
+
+option go_package = "./proto";
+
+// 服务信息
+message Service {
+  string id = 1;        // 服务唯一标识
+  string name = 2;      // 服务名称
+  string address = 3;   // 服务地址
+  int32 port = 4;       // 服务端口
+  repeated string tags = 5; // 服务标签
+  map<string, string> meta = 6; // 服务元数据
+  bool health = 7;      // 健康状态
+  int64 timestamp = 8;  // 注册时间（Unix时间戳）
+}
+
+// 健康检查配置
+message HealthCheck {
+  string id = 1;                   // 健康检查ID
+  string service_id = 2;           // 关联的服务ID
+  string type = 3;                 // 检查类型：http, tcp, grpc, script
+  map<string, string> config = 4;  // 检查配置
+  int64 interval = 5;              // 检查间隔（秒）
+  int64 timeout = 6;               // 检查超时（秒）
+  int64 deregister_after = 7;      // 服务不健康多久后注销（秒）
+  int64 last_check = 8;            // 上次检查时间（Unix时间戳）
+  string status = 9;               // 当前状态：passing, warning, critical
+}
+
+// 服务注册请求
+message RegisterServiceRequest {
+  Service service = 1;          // 服务信息
+  HealthCheck health_check = 2; // 健康检查配置（可选）
+}
+
+// 服务注册响应
+message RegisterServiceResponse {
+  string service_id = 1;  // 注册成功的服务ID
+  bool success = 2;       // 是否成功
+  string message = 3;     // 响应消息
+}
+
+// 服务注销请求
+message DeregisterServiceRequest {
+  string service_id = 1;  // 服务ID
+}
+
+// 服务注销响应
+message DeregisterServiceResponse {
+  bool success = 1;       // 是否成功
+  string message = 2;     // 响应消息
+}
+
+// 服务更新请求
+message UpdateServiceRequest {
+  Service service = 1;  // 服务信息
+}
+
+// 服务更新响应
+message UpdateServiceResponse {
+  bool success = 1;       // 是否成功
+  string message = 2;     // 响应消息
+}
+
+// 服务发现请求
+message DiscoverServiceRequest {
+  string name = 1;               // 服务名称
+  bool healthy_only = 2;         // 是否只返回健康的服务
+  repeated string tags = 3;      // 标签过滤
+}
+
+// 服务发现响应
+message DiscoverServiceResponse {
+  repeated Service services = 1; // 服务列表
+  bool success = 2;              // 是否成功
+  string message = 3;            // 响应消息
+}
+
+// 健康检查请求
+message CheckHealthRequest {
+  string service_id = 1;  // 服务ID
+}
+
+// 健康检查响应
+message CheckHealthResponse {
+  string status = 1;       // 健康状态：passing, warning, critical
+  bool success = 2;        // 是否成功
+  string message = 3;      // 响应消息
+}
+
+// Landlady服务
+service LandladyService {
+  // 服务注册
+  rpc RegisterService(RegisterServiceRequest) returns (RegisterServiceResponse);
+  // 服务注销
+  rpc DeregisterService(DeregisterServiceRequest) returns (DeregisterServiceResponse);
+  // 服务更新
+  rpc UpdateService(UpdateServiceRequest) returns (UpdateServiceResponse);
+  // 服务发现
+  rpc DiscoverService(DiscoverServiceRequest) returns (DiscoverServiceResponse);
+  // 健康检查
+  rpc CheckHealth(CheckHealthRequest) returns (CheckHealthResponse);
+}
+
+// 服务监控请求
+message WatchServiceRequest {
+  string name = 1;               // 服务名称
+  bool healthy_only = 2;         // 是否只返回健康的服务
+  repeated string tags = 3;      // 标签过滤
+}
+
+// 服务监控响应
+message WatchServiceResponse {
+  repeated Service services = 1; // 服务列表
+}
+
+// 服务监控服务
+service WatchService {
+  // 服务监控（流式）
+  rpc WatchService(WatchServiceRequest) returns (stream WatchServiceResponse);
+}

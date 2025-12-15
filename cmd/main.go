@@ -1,11 +1,14 @@
 package main
 
 import (
+	"fmt"
+	"path/filepath"
+
 	"github.com/gangantongxue/ggl"
 	"github.com/gangantongxue/landlady/cmd/global"
+	"github.com/gangantongxue/landlady/cmd/grpc"
 	"github.com/gangantongxue/landlady/cmd/lraft"
 	"github.com/gangantongxue/landlady/cmd/opts"
-	"path/filepath"
 )
 
 func main() {
@@ -22,11 +25,25 @@ func main() {
 	defer d.Stop()
 
 	if err := opts.Init(global.Opts); err != nil {
-		ggl.Panic("opts init failed", ggl.Err(err))
+		fmt.Printf("opts init failed: %v\n", err)
+		return
 	}
 	if err := lraft.Init(); err != nil {
-		ggl.Panic("raft init failed", ggl.Err(err))
+		fmt.Printf("raft init failed: %v\n", err)
+		return
 	}
 
+	// 启动gRPC服务器
+	grpcServer := grpc.NewServer(global.Opts.ClientAddr)
+	go func() {
+		if err := grpcServer.Start(); err != nil {
+			fmt.Printf("gRPC server start failed: %v\n", err)
+		}
+	}()
+	defer grpcServer.Stop()
+
 	lraft.InitHealthCheck()
+
+	// 阻塞主线程，防止程序退出
+	select {}
 }

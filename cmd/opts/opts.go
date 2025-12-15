@@ -96,7 +96,11 @@ func Init(o *Opts) error {
 		}
 	}
 	if o.GuidePort == "" {
-		o.GuidePort = strings.Split(o.ClientAddr, ":")[1]
+		// 正确提取端口号，使用strings.LastIndex找到最后一个冒号
+		lastColonIndex := strings.LastIndex(o.ClientAddr, ":")
+		if lastColonIndex != -1 {
+			o.GuidePort = o.ClientAddr[lastColonIndex+1:]
+		}
 	}
 	if o.NodeNum <= 0 {
 		return errors.New("node num must be greater than 0")

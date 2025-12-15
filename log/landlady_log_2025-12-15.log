@@ -1,0 +1,297 @@
+2025-12-15T16:55:49.373+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open data/node3/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T16:55:49.375+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open data/node2/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T16:56:25.127+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open tmp/node1/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T16:56:25.010+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open tmp/node2/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T16:56:25.013+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open tmp/node3/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:05:13.201+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open /tmp/node1/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:05:15.203+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open /tmp/node3/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:05:15.205+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "open /tmp/node2/landlady_raft/landlady_log.bolt: no such file or directory"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:06:33.723+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:27
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:06:49.383+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:27
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:18:16.050+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:18:18.053+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:21:15.292+0800	info	ggl@v0.0.0/ggl.go:15	become leader
+2025-12-15T17:40:49.152+0800	panic	ggl@v0.0.0/ggl.go:27	gRPC server start failed	{"error": "listen tcp 127.0.0.1:9001: listen: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main.func1
+	/home/landlady/cmd/main.go:36
+2025-12-15T17:40:52.115+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:40:55.125+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "dial tcp 127.0.0.1:8001: connect: connection refused"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:17
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:41:30.765+0800	error	ggl@v0.0.0/ggl.go:23	listen peer node failed :	{"error": "listen tcp :9001: bind: address already in use"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.ListenPeerNode
+	/home/landlady/cmd/lraft/listen_peernode.go:18
+2025-12-15T17:41:31.759+0800	info	ggl@v0.0.0/ggl.go:15	become leader
+2025-12-15T17:41:31.642+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "EOF"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:34
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:41:34.645+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "EOF"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:34
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:30
+main.main
+	/home/landlady/cmd/main.go:28
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:43:13.121+0800	error	ggl@v0.0.0/ggl.go:23	listen peer node failed :	{"error": "listen tcp :9001: bind: address already in use"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.ListenPeerNode
+	/home/landlady/cmd/lraft/listen_peernode.go:18
+2025-12-15T17:43:13.946+0800	info	ggl@v0.0.0/ggl.go:15	become leader
+2025-12-15T17:43:16.117+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8002: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:43:19.128+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8003: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:17.126+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:20.137+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8002: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:23.142+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8003: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:53.098+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:56.103+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8002: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:44:59.108+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8003: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:45:14.118+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:46:00.448+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:47:02.086+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:29
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T17:59:37.306+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:30
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:00:08.592+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:30
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:00:35.110+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:30
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:02:28.401+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:30
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:03:03.514+0800	panic	ggl@v0.0.0/ggl.go:27	raft init failed	{"error": "listen tcp 127.0.0.1:8001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main
+	/home/landlady/cmd/main.go:30
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:06:01.698+0800	panic	ggl@v0.0.0/ggl.go:27	gRPC server start failed	{"error": "listen tcp 127.0.0.1:9001: bind: address already in use"}
+github.com/gangantongxue/ggl.Panic
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:27
+main.main.func1
+	/home/landlady/cmd/main.go:40
+2025-12-15T18:06:29.670+0800	info	ggl@v0.0.0/ggl.go:15	become leader
+2025-12-15T18:06:31.882+0800	error	ggl@v0.0.0/ggl.go:23	join cluster failed :	{"error": "EOF"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.Join
+	/home/landlady/cmd/lraft/join.go:34
+github.com/gangantongxue/landlady/cmd/lraft.Init
+	/home/landlady/cmd/lraft/raft.go:29
+main.main
+	/home/landlady/cmd/main.go:31
+runtime.main
+	/snap/go/11016/src/runtime/proc.go:283
+2025-12-15T18:07:30.998+0800	error	ggl@v0.0.0/ggl.go:23	listen peer node failed :	{"error": "listen tcp :9001: bind: address already in use"}
+github.com/gangantongxue/ggl.Error
+	/root/go/pkg/mod/github.com/gangantongxue/ggl@v0.0.0/ggl.go:23
+github.com/gangantongxue/landlady/cmd/lraft.ListenPeerNode
+	/home/landlady/cmd/lraft/listen_peernode.go:18
+2025-12-15T18:07:31.668+0800	info	ggl@v0.0.0/ggl.go:15	become leader

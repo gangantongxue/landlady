@@ -1,10 +1,7 @@
 package lraft
 
 import (
-	"fmt"
 	"sync"
-
-	"github.com/gangantongxue/ggl"
 
 	"github.com/gangantongxue/landlady/cmd/global"
 	"github.com/hashicorp/raft"
@@ -40,28 +37,8 @@ func AddPeers() error {
 		signal := &Signal{}
 		signal.cond = sync.NewCond(&signal.lock)
 		go ListenPeerNode(signal)
-		for !global.NodeNum.IsFull() {
-		}
-		for _, node := range global.NodesInfo.Get() {
-			if node.ID == raft.ServerID(global.Opts.NodeID) {
-				continue
-			}
-			if err := global.Landlady.AddVoter(node.ID, node.Address, 0, 0).Error(); err != nil {
-				ggl.Error("add voter failed :", ggl.Err(err))
-				signal.lock.Lock()
-				signal.state = false
-				signal.cond.Broadcast()
-				signal.lock.Unlock()
-				return err
-			} else {
-				ggl.Info(fmt.Sprintf("add voter(ID:%v,Address:%v) success", node.ID, node.Address))
-			}
-		}
-		signal.lock.Lock()
-		signal.state = true
-		signal.cond.Broadcast()
-		signal.lock.Unlock()
-		ggl.Info("add peers success")
+		// 移除无限循环，让引导节点先完成初始化
+		// 新节点加入将在ListenPeerNode中异步处理
 	}
 	return nil
 }

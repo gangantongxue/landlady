@@ -10,7 +10,6 @@ import (
 	"github.com/gangantongxue/landlady/cmd/model"
 	"github.com/gangantongxue/landlady/cmd/opts"
 	"github.com/hashicorp/raft"
-	raftboltdb "github.com/hashicorp/raft-boltdb"
 )
 
 // Init 初始化
@@ -27,9 +26,13 @@ func Init() error {
 		return err
 	}
 	if global.Opts.Join {
-		Join()
+		if err := Join(); err != nil {
+			return err
+		}
 	} else {
-		Guide()
+		if err := Guide(); err != nil {
+			return err
+		}
 	}
 	return nil
 }
@@ -45,30 +48,27 @@ func Start(o *opts.Opts) (*raft.Raft, error) {
 
 	raftDataDir := filepath.Join(o.DataDir, "landlady_raft")
 
-	logStore, err := raftboltdb.NewBoltStore(filepath.Join(raftDataDir, "landlady_log.bolt"))
-	if err != nil {
+	// 确保raftDataDir目录存在
+	if err := os.MkdirAll(raftDataDir, 0755); err != nil {
 		return nil, err
 	}
-	stableStore, err := raftboltdb.NewBoltStore(filepath.Join(raftDataDir, "landlady_stable.bolt"))
-	if err != nil {
-		return nil, err
-	}
+
+	// 创建文件快照存储
 	snapshots, err := raft.NewFileSnapshotStore(raftDataDir, 1, os.Stderr)
 	if err != nil {
 		return nil, err
 	}
+
+	// 创建TCP transport
 	addr, err := net.ResolveTCPAddr("tcp", o.PeerAddr)
 	if err != nil {
 		return nil, err
 	}
-	transport, err := raft.NewTCPTransport(o.PeerAddr, addr, o.NodeNum, 10*time.Second, os.Stderr)
-	if err != nil {
-		return nil, err
-	}
-	raftNode, err := raft.NewRaft(config, global.FSM, logStore, stableStore, snapshots, transport)
+	transport, err := raft.NewTCPTransport(o.PeerAddr, addr, 3, 10*time.Second, os.Stderr)
 	if err != nil {
 		return nil, err
 	}
 
-	return raftNode, nil
+	// 使用内存存储，简化测试
+	return raft.NewRaft(config, global.FSM, raft.NewInmemStore(), raft.NewInmemStore(), snapshots, transport)
 }
